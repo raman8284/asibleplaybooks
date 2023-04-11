@@ -1,0 +1,9 @@
+---
+- name: web server
+  hosts: web
+  tasks:
+    - name: web direcory created
+      file:
+        path: /home/ec2-user/web-dir
+        state: directory
+...
