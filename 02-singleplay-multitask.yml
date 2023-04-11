@@ -6,4 +6,8 @@
       file:
         path: /home/ec2-user/web-dir
         state: directory
+    - name: file download
+      get_url:
+        url: https://www.dwsamplefiles.com/?dl_id=176
+        dest: /home/ec2-user
 ...
