@@ -1,0 +1,26 @@
+---
+- name: web server
+  hosts: web
+  become: yes
+  tasks:
+    - name: install appache
+      yum:
+        name: httpd
+        state: installed
+    - name: enable httpd
+      service:
+        name: httpd
+        enabled: yes
+    - name: started httpd
+      service:
+        name: httpd
+        state: started
+    - name: git installed
+      yum:
+        name: git
+        state: installed
+    - name: myntra display
+      git:
+        repo: https://github.com/ravi2krishna/new-ecomm.git
+        dest: /var/www/html/
+...

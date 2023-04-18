@@ -1,0 +1,18 @@
+---
+- name: web server
+  hosts: web
+  become: yes
+  tasks:
+    - name: install appache
+      yum:
+        name: httpd
+        state: installed
+    - name: enable httpd
+      service:
+        name: httpd
+        enabled: yes
+    - name: started httpd
+      service:
+        name: httpd
+        state: started
+...
